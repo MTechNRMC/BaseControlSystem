@@ -236,23 +236,34 @@ if __name__ == '__main__':
             sock.send(createMoveMsg(0x09), addr)
         elif c == 'o':
             #rasie arm
-            #sock.send(createMoveMsg(0x09), addr)
+            sock.send(createMoveMsg(0x0D), addr)
         elif c == 'l':
             #lower arm
-            #sock.send(createMoveMsg(0x09), addr)
+            sock.send(createMoveMsg(0x0E), addr)
         elif c == 'p':
             #raise second arm
-            #sock.send(createMoveMsg(0x09), addr)
+            sock.send(createMoveMsg(0x0F), addr)
         elif c == ';':
             #lower second arm
-            #sock.send(createMoveMsg(0x09), addr)
+            sock.send(createMoveMsg(0x10), addr)
         elif c == '[':
             #winch
-            #sock.send(createMoveMsg(0x09), addr)
+            sock.send(createMoveMsg(0x15), addr)
         elif c == ']':
             #winch
-            #sock.send(createMoveMsg(0x09), addr)
-
+            sock.send(createMoveMsg(0x16), addr)
+        elif c == 'y':
+            #Left Actuator Up
+            sock.send(createMoveMsg(0x11), addr)
+        elif c == 'h':
+            #Left Actuator down
+            sock.send(createMoveMsg(0x13), addr)
+        elif c == 'u':
+            #Right Actuator Up
+            sock.send(createMoveMsg(0x12), addr)
+        elif c == 'j':
+            #Right Actuator down
+            sock.send(createMoveMsg(0x14), addr)
 
 
         #sleep for half a second

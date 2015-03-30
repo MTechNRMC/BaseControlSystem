@@ -102,10 +102,14 @@ def createArmRotMsg(code, armRot):
 def getArmRot(msg):
     return struct.unpack("!i", msg[1:5])[0]
 
-# Park
+# Park - Stops all motors
 def park():
-    ser.write(chr(0xff) + chr(0x00) + chr(123))
-    ser.write(chr(0xff) + chr(0x01) + chr(123))
+    ser.write(chr(0xff) + chr(0x00) + chr(123))     #Left Drive?
+    ser.write(chr(0xff) + chr(0x01) + chr(123))     #Right Drive?
+    ser.write(chr(0xff) + chr(0x02) + chr(123))     #Left Actuator
+    ser.write(chr(0xff) + chr(0x03) + chr(123))     #Right Actuator
+    ser.write(chr(0xff) + chr(0x04) + chr(123))     #Secondary Actuator?
+    ser.write(chr(0xff) + chr(0x05) + chr(123))     #Winch Drive
 
 # Move Forward
 def func_moveForward():
@@ -207,6 +211,58 @@ def func_dump():
 	arms.write('d')
     while (arms.read() != 'p'):
         time.sleep(.01)
+
+#Bring main arms up
+def func_mainArmsUp():
+    park()
+    ser.write(chr(0xff) + chr(0x02) + chr(254))     #Left Actuator
+    ser.write(chr(0xff) + chr(0x03) + chr(254))     #Right Actuator
+
+#Bring main arms down
+def func_mainArmsDown():
+    park()
+    ser.write(chr(0xff) + chr(0x02) + chr(0))     #Left Actuator
+    ser.write(chr(0xff) + chr(0x03) + chr(0))     #Right Actuator
+
+#Left Actuator Up
+def func_leftActuatorUp():
+    park()
+    ser.write(chr(0xff) + chr(0x02) + chr(254))
+
+#Left Actuator Down
+def func_leftActuatorDown():
+    park()
+    ser.write(chr(0xff) + chr(0x02) + chr(0))
+
+#Right Actuator Up
+def func_rightActuatorUp():
+    park()
+    ser.write(chr(0xff) + chr(0x03) + chr(254))
+
+#Right Actuator Down
+def func_rightActuatorDown():
+    park()
+    ser.write(chr(0xff) + chr(0x03) + chr(0))
+
+#Scondary Actuator Up
+def func_scondaryActuatorUp():
+    park()
+    ser.write(chr(0xff) + chr(0x04) + chr(254))
+
+#Scondary Actuator down
+def func_scondaryActuatorDown():
+    park()
+    ser.write(chr(0xff) + chr(0x04) + chr(0))
+
+#forward winch
+def func_forwardWinch():
+    park()
+    ser.write(chr(0xff) + chr(0x05) + chr(254))
+
+#reverse winch
+def func_reverseWinch():
+    park()
+    ser.write(chr(0xff) + chr(0x05) + chr(0))
 
 ####################################################################################################
 #misc functions
