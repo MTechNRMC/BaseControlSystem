@@ -108,7 +108,7 @@ def park():
     ser.write(chr(0xff) + chr(0x01) + chr(123))     #Right Drive?
     ser.write(chr(0xff) + chr(0x02) + chr(123))     #Left Actuator
     ser.write(chr(0xff) + chr(0x03) + chr(123))     #Right Actuator
-    ser.write(chr(0xff) + chr(0x04) + chr(123))     #Secondary Actuator?
+    ser.write(chr(0xff) + chr(0x04) + chr(123))     #Bucket Actuator
     ser.write(chr(0xff) + chr(0x05) + chr(123))     #Winch Drive
 
 # Move Forward
@@ -245,12 +245,12 @@ def func_rightActuatorDown():
     ser.write(chr(0xff) + chr(0x03) + chr(0))
 
 #Scondary Actuator Up
-def func_scondaryActuatorUp():
+def func_bucketActuatorUp():
     park()
     ser.write(chr(0xff) + chr(0x04) + chr(254))
 
 #Scondary Actuator down
-def func_scondaryActuatorDown():
+def func_bucketActuatorDown():
     park()
     ser.write(chr(0xff) + chr(0x04) + chr(0))
 
@@ -382,6 +382,86 @@ def intrp(addr, msg):
         elif(ord(msg[0]) == 0x0C):
             #Stop Movement
             lastTimeStamp = 0  #reset the time stamp
+            park()
+
+        elif(ord(msg[0]) == 0x0D):
+            #Main Arm Up
+            lastCode = msg[0]
+            lastTimeStamp = getTimeStamp(msg)
+            func_mainArmsUp()
+            time.sleep(.1)
+            park()
+
+        elif(ord(msg[0]) == 0x0E):
+            #Main Arm Down
+            lastCode = msg[0]
+            lastTimeStamp = getTimeStamp(msg)
+            func_mainArmsDown()
+            time.sleep(.1)
+            park()
+
+        elif(ord(msg[0]) == 0x0F):
+            #Bucket Actuator Out
+            lastCode = msg[0]
+            lastTimeStamp = getTimeStamp(msg)
+            func_bucketActuatorUp()
+            time.sleep(.1)
+            park()
+
+        elif(ord(msg[0]) == 0x10):
+            #Bucket Actuator In
+            lastCode = msg[0]
+            lastTimeStamp = getTimeStamp(msg)
+            func_bucketActuatorDown()
+            time.sleep(.1)
+            park()
+
+        elif(ord(msg[0]) == 0x11):
+            #L Actuator Up
+            lastCode = msg[0]
+            lastTimeStamp = getTimeStamp(msg)
+            func_leftActuatorUp()
+            time.sleep(.1)
+            park()
+
+        elif(ord(msg[0]) == 0x12):
+            #R Actuator Up
+            lastCode = msg[0]
+            lastTimeStamp = getTimeStamp(msg)
+            func_rightActuatorUp()
+            time.sleep(.1)
+            park()
+
+        elif(ord(msg[0]) == 0x13):
+            #L Actuator Down
+            lastCode = msg[0]
+            lastTimeStamp = getTimeStamp(msg)
+            func_leftActuatorDown()
+            time.sleep(.1)
+            park()
+
+        elif(ord(msg[0]) == 0x14):
+            #R Actuator Down
+            lastCode = msg[0]
+            lastTimeStamp = getTimeStamp(msg)
+            func_rightActuatorDown()
+            time.sleep(.1)
+            park()
+
+        elif(ord(msg[0]) == 0x15):
+            #Winch Forward
+            lastCode = msg[0]
+            lastTimeStamp = getTimeStamp(msg)
+            func_forwardWinch()
+            time.sleep(.1)
+            park()
+
+        elif(ord(msg[0]) == 0x16):
+            #Winch Reverse
+            lastCode = msg[0]
+            lastTimeStamp = getTimeStamp(msg)
+            func_reverseWinch()
+            time.sleep(.1)
             park()
 
         elif(ord(msg[0]) == 0xEF):

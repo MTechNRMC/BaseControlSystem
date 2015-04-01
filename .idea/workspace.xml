@@ -26,7 +26,7 @@
       <file leaf-file-name="RobotCtrlSvr.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/newVersion/RobotCtrlSvr.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="246" column="21" selection-start="5672" selection-end="5672" vertical-scroll-proportion="0.21672355" vertical-offset="3970" max-vertical-offset="6885">
+            <state line="110" column="68" selection-start="2680" selection-end="2680" vertical-scroll-proportion="0.34991422" vertical-offset="1581" max-vertical-offset="8245">
               <folding />
             </state>
           </provider>
@@ -35,7 +35,7 @@
       <file leaf-file-name="joystick_c.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/newVersion/joystick_c.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="262" column="46" selection-start="6699" selection-end="6699" vertical-scroll-proportion="0.0" vertical-offset="4024" max-vertical-offset="4607">
+            <state line="262" column="46" selection-start="6699" selection-end="6699" vertical-scroll-proportion="0.0" vertical-offset="4454" max-vertical-offset="4675">
               <folding />
             </state>
           </provider>
@@ -57,10 +57,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="x" value="683" />
+    <option name="width" value="683" />
+    <option name="height" value="728" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -333,14 +332,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <frame x="683" y="0" width="683" height="728" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17935579" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36731634" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -374,6 +373,34 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/newVersion/RobotCtrlSvr.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="462" column="31" selection-start="11762" selection-end="11762" vertical-scroll-proportion="0.0" vertical-offset="7854" max-vertical-offset="8245">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/newVersion/joystick_c.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="262" column="46" selection-start="6699" selection-end="6699" vertical-scroll-proportion="0.0" vertical-offset="4454" max-vertical-offset="4675">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/newVersion/RobotCtrlSvr.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="246" column="21" selection-start="5672" selection-end="5672" vertical-scroll-proportion="0.0" vertical-offset="4182" max-vertical-offset="6885">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/newVersion/joystick_c.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="262" column="46" selection-start="6699" selection-end="6699" vertical-scroll-proportion="0.0" vertical-offset="4454" max-vertical-offset="4675">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/newVersion/RobotCtrlSvr.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6018">
@@ -454,7 +481,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/newVersion/RobotCtrlSvr.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="246" column="21" selection-start="5672" selection-end="5672" vertical-scroll-proportion="0.21672355" vertical-offset="3970" max-vertical-offset="6885">
+        <state line="110" column="68" selection-start="2680" selection-end="2680" vertical-scroll-proportion="0.34991422" vertical-offset="1581" max-vertical-offset="8245">
           <folding />
         </state>
       </provider>
