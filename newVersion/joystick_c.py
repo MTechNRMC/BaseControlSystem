@@ -2,7 +2,7 @@ import msvcrt
 import time
 import struct
 
-from Socket.UDP_SOCK import UDP
+from UDP_SOCK import UDP
 
 
 speedValue = 75
