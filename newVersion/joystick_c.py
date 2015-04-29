@@ -8,7 +8,7 @@ from UDP_SOCK import UDP
 speedValue = 75
 movingForward = 1
 
-addr = "192.168.1.15"
+addr = "192.168.1.13"
 
 def test(addr, msg):
     print "Test"
@@ -165,6 +165,7 @@ def getkey():
 
 # start main program
 if __name__ == '__main__':
+    global addr
     sock = UDP(5000)
     sock.startReceive(test)
     print '\nNAVIGATION CONTROLS:'
@@ -186,7 +187,7 @@ if __name__ == '__main__':
             if(response and (response[0] == 'y' or response[0] == "Y")):
                 sock.send(createMoveMsg(0x0C), addr)
                 # send the stop command
-                sock.send(createMsg(0xF1))
+                sock.send(createMsg(0xF1), addr)
                 sock.close()
                 break
             else:
@@ -219,31 +220,32 @@ if __name__ == '__main__':
         elif c == 'c': #curve right reverse
             sock.send(createMoveMsg(0x07), addr)
 
-        elif c == 'p':
+        elif c == 'p': #park
             sock.send(createMoveMsg(0x0C), addr)
 
-        elif c == 'y':
-            sock.send(createMsg(0x0B), addr)
+#        elif c == 'y':
+#            sock.send(createMsg(0x0B), addr)
 
-        elif c == 'h':
-            sock.send(createMsg(0x0A), addr)
+#        elif c == 'h':
+#            sock.send(createMsg(0x0A), addr)
 
-        elif c == 'i':
+        elif c == '=':
+            #speed up
             sock.send(createMoveMsg(0x08), addr)
 
-        elif c == 'k':
+        elif c == '-':
             #slow down
             sock.send(createMoveMsg(0x09), addr)
-        elif c == 'o':
+        elif c == 'i':
             #rasie arm
             sock.send(createMoveMsg(0x0D), addr)
-        elif c == 'l':
+        elif c == 'k':
             #lower arm
             sock.send(createMoveMsg(0x0E), addr)
-        elif c == 'p':
+        elif c == 'y':
             #raise second arm
             sock.send(createMoveMsg(0x0F), addr)
-        elif c == ';':
+        elif c == 'h':
             #lower second arm
             sock.send(createMoveMsg(0x10), addr)
         elif c == '[':
@@ -252,16 +254,16 @@ if __name__ == '__main__':
         elif c == ']':
             #winch
             sock.send(createMoveMsg(0x16), addr)
-        elif c == 'y':
+        elif c == 'u':
             #Left Actuator Up
             sock.send(createMoveMsg(0x11), addr)
-        elif c == 'h':
+        elif c == 'j':
             #Left Actuator down
             sock.send(createMoveMsg(0x13), addr)
-        elif c == 'u':
+        elif c == 'o':
             #Right Actuator Up
             sock.send(createMoveMsg(0x12), addr)
-        elif c == 'j':
+        elif c == 'l':
             #Right Actuator down
             sock.send(createMoveMsg(0x14), addr)
 

@@ -168,8 +168,9 @@ def move():
 
 # Slow Down
 def func_slowDown():
+	global speedValue
 	if (movingForward == 1):
-		if (speedValue <= 50):
+		if ( speedValue <= 50):
 			speedValue = speedValue + 25
 	else:
 		if (speedValue >= 204):
@@ -178,6 +179,7 @@ def func_slowDown():
 
 # Speed Up
 def func_speedUp():
+	global speedValue
 	if (movingForward == 1):
 		if (speedValue >= 25):
 			speedValue = speedValue - 25
@@ -187,30 +189,30 @@ def func_speedUp():
 	move()
 
 # Dig
-def func_dig():
-	park()
-	arms.write('e')
-	out = ''
-	time.sleep(0.5)
-	while (arms.inWaiting() > 0):
-		out += arms.read(1)
-		#print out
-	arms.write('e')
-	while (arms.read() != 'p'):
-		time.sleep(.01)
+#def func_dig():
+#	park()
+#	arms.write('e')
+#	out = ''
+#	time.sleep(0.5)
+#	while (arms.inWaiting() > 0):
+#		out += arms.read(1)
+#		#print out
+#	arms.write('e')
+#	while (arms.read() != 'p'):
+#		time.sleep(.01)
 
 # Take a dump
-def func_dump():
-	park()
-	arms.write('d')
-	out = ''
-	time.sleep(0.5)
-	while (arms.inWaiting() > 0):
-		out += arms.read(1)
+#def func_dump():
+#	park()
+#	arms.write('d')
+#	out = ''
+#	time.sleep(0.5)
+#	while (arms.inWaiting() > 0):
+#		out += arms.read(1)
 		#print out
-	arms.write('d')
-	while (arms.read() != 'p'):
-		time.sleep(.01)
+#	arms.write('d')
+#	while (arms.read() != 'p'):
+#		time.sleep(.01)
 
 #Bring main arms up
 def func_mainArmsUp():
@@ -377,7 +379,7 @@ def intrp(addr, msg):
 			#Dig
 			lastCode = msg[0]
 			lastTimeStamp = getTimeStamp(msg)
-			func_dig()
+#			func_dig()
 			time.sleep(.1)
 			park()
 #			print("Dig")
@@ -386,7 +388,7 @@ def intrp(addr, msg):
 			#Dump
 			lastCode = msg[0]
 			lastTimeStamp = getTimeStamp(msg)
-			func_dump()
+#			func_dump()
 			time.sleep(.1)
 			park()
 #			print("Dump")
