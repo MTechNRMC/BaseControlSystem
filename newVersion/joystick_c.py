@@ -8,7 +8,7 @@ from UDP_SOCK import UDP
 speedValue = 75
 movingForward = 1
 
-addr = "192.168.1.13"
+addr = "192.168.1.15"
 
 def test(addr, msg):
     print "Test"

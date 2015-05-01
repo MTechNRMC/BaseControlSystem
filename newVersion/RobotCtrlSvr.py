@@ -6,7 +6,7 @@ import struct
 from UDP_SOCK import UDP
 
 # set up serial port
-serialPortString = '/dev/ttyACM1'
+serialPortString = '/dev/ttyACM0'
 ser = serial.Serial(serialPortString, 9600)
 ser.open()
 ser.write(chr(0xa1))
@@ -113,56 +113,61 @@ def park():
 
 # Move Forward
 def func_moveForward():
-	park()
+#	park()
+	global speedValue
+	global movingForward
 	movingForward = 1
-	speedValue = 50
+	speedValue = 77
 	move()
 
 # Rotate Left
 def func_rotateLeft():
-	park()
-	ser.write(chr(0xff) + chr(0x00) + chr(254))
-	ser.write(chr(0xff) + chr(0x01) + chr(1))
+#	park()
+	ser.write(chr(0xff) + chr(0x00) + chr(200))
+	ser.write(chr(0xff) + chr(0x01) + chr(55))
 
 # Curve Left Forward
 def func_curveLeftForward():
-	park()
+#	park()
 	ser.write(chr(0xff) + chr(0x00) + chr(75))
-	ser.write(chr(0xff) + chr(0x01) + chr(0))
+	ser.write(chr(0xff) + chr(0x01) + chr(27))
 
 # Curve Left Reverse
 def func_curveLeftReverse():
-	park()
-	ser.write(chr(0xff) + chr(0x00) + chr(179))
-	ser.write(chr(0xff) + chr(0x01) + chr(254))
+#	park()
+	ser.write(chr(0xff) + chr(0x00) + chr(154))
+	ser.write(chr(0xff) + chr(0x01) + chr(179))
 
 # Curve Right Reverse
 def func_curveRightReverse():
-	park()
-	ser.write(chr(0xff) + chr(0x01) + chr(179))
-	ser.write(chr(0xff) + chr(0x00) + chr(254))
+#	park()
+	ser.write(chr(0xff) + chr(0x01) + chr(154))
+	ser.write(chr(0xff) + chr(0x00) + chr(179))
 
 # Reverse
 def func_reverse():
-	park()
+#	park()
+	global speedValue
+	global movingForward
 	movingForward = 0
-	speedValue = 204
+	speedValue = 177
 	move()
 
 # Rotate Right
 def func_rotateRight():
-	park()
-	ser.write(chr(0xff) + chr(0x00) + chr(1))
-	ser.write(chr(0xff) + chr(0x01) + chr(254))
+#	park()
+	ser.write(chr(0xff) + chr(0x00) + chr(55))
+	ser.write(chr(0xff) + chr(0x01) + chr(200))
 
 # Curve Right Forward
 def func_curveRightForward():
-	park()
-	ser.write(chr(0xff) + chr(0x00) + chr(0))
-	ser.write(chr(0xff) + chr(0x01) + chr(75))
+#	park()
+	ser.write(chr(0xff) + chr(0x00) + chr(75))
+	ser.write(chr(0xff) + chr(0x01) + chr(27))
 
 # Move (this is called by speedUp and slowDown)
 def move():
+	global speedValue
 	ser.write(chr(0xff) + chr(0x00) + chr(speedValue))
 	ser.write(chr(0xff) + chr(0x01) + chr(speedValue))
 
@@ -175,7 +180,6 @@ def func_slowDown():
 	else:
 		if (speedValue >= 204):
 			speedValue = speedValue - 25
-	move()
 
 # Speed Up
 def func_speedUp():
@@ -186,7 +190,6 @@ def func_speedUp():
 	else:
 		if (speedValue <= 229):
 			speedValue = speedValue + 25
-	move()
 
 # Dig
 #def func_dig():
@@ -216,54 +219,54 @@ def func_speedUp():
 
 #Bring main arms up
 def func_mainArmsUp():
-	park()
+#	park()
 	ser.write(chr(0xff) + chr(0x02) + chr(254))     #Left Actuator
 	ser.write(chr(0xff) + chr(0x03) + chr(254))     #Right Actuator
 
 #Bring main arms down
 def func_mainArmsDown():
-	park()
+#	park()
 	ser.write(chr(0xff) + chr(0x02) + chr(0))     #Left Actuator
 	ser.write(chr(0xff) + chr(0x03) + chr(0))     #Right Actuator
 
 #Left Actuator Up
 def func_leftActuatorUp():
-	park()
+#	park()
 	ser.write(chr(0xff) + chr(0x02) + chr(254))
 
 #Left Actuator Down
 def func_leftActuatorDown():
-	park()
+#	park()
 	ser.write(chr(0xff) + chr(0x02) + chr(0))
 
 #Right Actuator Up
 def func_rightActuatorUp():
-	park()
+#	park()
 	ser.write(chr(0xff) + chr(0x03) + chr(254))
 
 #Right Actuator Down
 def func_rightActuatorDown():
-	park()
+#	park()
 	ser.write(chr(0xff) + chr(0x03) + chr(0))
 
 #Scondary Actuator Up
 def func_bucketActuatorUp():
-	park()
+#	park()
 	ser.write(chr(0xff) + chr(0x04) + chr(254))
 
 #Scondary Actuator down
 def func_bucketActuatorDown():
-	park()
+#	park()
 	ser.write(chr(0xff) + chr(0x04) + chr(0))
 
 #forward winch
 def func_forwardWinch():
-	park()
+#	park()
 	ser.write(chr(0xff) + chr(0x05) + chr(254))
 
 #reverse winch
 def func_reverseWinch():
-	park()
+#	park()
 	ser.write(chr(0xff) + chr(0x05) + chr(0))
 
 ####################################################################################################
@@ -286,7 +289,7 @@ def intrp(addr, msg):
 			func_moveForward()
 			time.sleep(.1)
 			park()
-#			print("Move Forward")
+			print("Move Forward")
 
 			#clear the buffer of all codes with same time stamp
 #                while len(msg) > 0 and lastTimeStamp >= getTimeStamp(msg) and lastCode == msg[0]:
@@ -299,45 +302,45 @@ def intrp(addr, msg):
 			lastCode = msg[0]
 			lastTimeStamp = getTimeStamp(msg)
 			func_reverse()
-			time.sleep(.1)
+			time.sleep(.01)
 			park()
-#			print("Move Backward")
+			print("Move Backward")
 
 		elif(ord(msg[0]) == 0x02):
 			#Rot Left
 			lastCode = msg[0]
 			lastTimeStamp = getTimeStamp(msg)
 			func_rotateLeft()
-			time.sleep(.1)
+			time.sleep(.01)
 			park()
-#			print("Rot Left")
+			print("Rot Left")
 
 		elif(ord(msg[0]) == 0x03):
 			#Rot Right
 			lastCode = msg[0]
 			lastTimeStamp = getTimeStamp(msg)
 			func_rotateRight()
-			time.sleep(.1)
+			time.sleep(.01)
 			park()
-#			print("Rot Right")
+			print("Rot Right")
 
 		elif(ord(msg[0]) == 0x04):
 			#Curve Forward Left
 			lastCode = msg[0]
 			lastTimeStamp = getTimeStamp(msg)
 			func_curveLeftForward()
-			time.sleep(.1)
+			time.sleep(.01)
 			park()
-#			print("Forward Left")
+			print("Forward Left")
 
 		elif(ord(msg[0]) == 0x05):
 			#Curve Backward Left
 			lastCode = msg[0]
 			lastTimeStamp = getTimeStamp(msg)
 			func_curveLeftReverse()
-			time.sleep(.1)
+			time.sleep(.01)
 			park()
-#			print("Backward Left")
+			print("Backward Left")
 
 		elif(ord(msg[0]) == 0x06):
 			#Curve Forward Right
@@ -346,41 +349,41 @@ def intrp(addr, msg):
 			func_curveRightForward()
 			time.sleep(.1)
 			park()
-#			print("Forward Right")
+			print("Forward Right")
 
 		elif(ord(msg[0]) == 0x07):
 			#Curve Backward Right
 			lastCode = msg[0]
 			lastTimeStamp = getTimeStamp(msg)
 			func_curveRightReverse()
-			time.sleep(.1)
+			time.sleep(.01)
 			park()
-#			print("Backward Right")
+			print("Backward Right")
 
 		elif(ord(msg[0]) == 0x08):
 			#Increase Speed
 			lastCode = msg[0]
 			lastTimeStamp = getTimeStamp(msg)
 			func_speedUp()
-			time.sleep(.1)
+			time.sleep(.01)
 			park()
-#			print("Increase Speed")
+			print("Increase Speed")
 
 		elif(ord(msg[0]) == 0x09):
 			#Decrease Speed
 			lastCode = msg[0]
 			lastTimeStamp = getTimeStamp(msg)
 			func_slowDown()
-			time.sleep(.1)
+			time.sleep(.01)
 			park()
-#			print("Decrease Speed")
+			print("Decrease Speed")
 
 		elif(ord(msg[0]) == 0x0A):
 			#Dig
 			lastCode = msg[0]
 			lastTimeStamp = getTimeStamp(msg)
 #			func_dig()
-			time.sleep(.1)
+			time.sleep(.01)
 			park()
 #			print("Dig")
 
@@ -389,7 +392,7 @@ def intrp(addr, msg):
 			lastCode = msg[0]
 			lastTimeStamp = getTimeStamp(msg)
 #			func_dump()
-			time.sleep(.1)
+			time.sleep(.01)
 			park()
 #			print("Dump")
 
@@ -404,90 +407,90 @@ def intrp(addr, msg):
 			lastCode = msg[0]
 			lastTimeStamp = getTimeStamp(msg)
 			func_mainArmsUp()
-			time.sleep(.1)
+			time.sleep(.01)
 			park()
-#			print("Main Arm Up")
+			print("Main Arm Up")
 
 		elif(ord(msg[0]) == 0x0E):
 			#Main Arm Down
 			lastCode = msg[0]
 			lastTimeStamp = getTimeStamp(msg)
 			func_mainArmsDown()
-			time.sleep(.1)
+			time.sleep(.01)
 			park()
-#			print("Main Arm Down")
+			print("Main Arm Down")
 
 		elif(ord(msg[0]) == 0x0F):
 			#Bucket Actuator Out
 			lastCode = msg[0]
 			lastTimeStamp = getTimeStamp(msg)
 			func_bucketActuatorUp()
-			time.sleep(.1)
+			time.sleep(.01)
 			park()
-#			print("Bucket Actuator Out")
+			print("Bucket Actuator Out")
 
 		elif(ord(msg[0]) == 0x10):
 			#Bucket Actuator In
 			lastCode = msg[0]
 			lastTimeStamp = getTimeStamp(msg)
 			func_bucketActuatorDown()
-			time.sleep(.1)
+			time.sleep(.01)
 			park()
-#			print("Bucket Actuator In")
+			print("Bucket Actuator In")
 
 		elif(ord(msg[0]) == 0x11):
 			#L Actuator Up
 			lastCode = msg[0]
 			lastTimeStamp = getTimeStamp(msg)
 			func_leftActuatorUp()
-			time.sleep(.1)
+			time.sleep(.01)
 			park()
-#			print("L Actuator Up")
+			print("L Actuator Up")
 
 		elif(ord(msg[0]) == 0x12):
 			#R Actuator Up
 			lastCode = msg[0]
 			lastTimeStamp = getTimeStamp(msg)
 			func_rightActuatorUp()
-			time.sleep(.1)
+			time.sleep(.01)
 			park()
-#			print("R Actuator Up")
+			print("R Actuator Up")
 
 		elif(ord(msg[0]) == 0x13):
 			#L Actuator Down
 			lastCode = msg[0]
 			lastTimeStamp = getTimeStamp(msg)
 			func_leftActuatorDown()
-			time.sleep(.1)
+			time.sleep(.01)
 			park()
-#			print("L Actuator Down")
+			print("L Actuator Down")
 
 		elif(ord(msg[0]) == 0x14):
 			#R Actuator Down
 			lastCode = msg[0]
 			lastTimeStamp = getTimeStamp(msg)
 			func_rightActuatorDown()
-			time.sleep(.1)
+			time.sleep(.01)
 			park()
-#			print("R Actuator Down")
+			print("R Actuator Down")
 
 		elif(ord(msg[0]) == 0x15):
 			#Winch Forward
 			lastCode = msg[0]
 			lastTimeStamp = getTimeStamp(msg)
 			func_forwardWinch()
-			time.sleep(.1)
+			time.sleep(.01)
 			park()
-#			print("Winch Forward")
+			print("Winch Forward")
 
 		elif(ord(msg[0]) == 0x16):
 			#Winch Reverse
 			lastCode = msg[0]
 			lastTimeStamp = getTimeStamp(msg)
 			func_reverseWinch()
-			time.sleep(.1)
+			time.sleep(.01)
 			park()
-#			print("Winch Reverse")
+			print("Winch Reverse")
 
 		elif(ord(msg[0]) == 0xEF):
 			#Resume

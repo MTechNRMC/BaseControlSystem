@@ -50,11 +50,15 @@ class UDP:
     # @param func[in] The handler function for handling received messages. The function that is passed should only
     # take two argument, address of the sender and the message received
     # @return True if successful
-    def startReceive(self, func):
+    def startReceive(self, func, timeOutFunc = None):
         self.rx = True                          # set to true to continually receive messages
         #create a rx thread
         try:
-            thread.start_new_thread(self.receive, (func,))  # start receiving on a new thread
+            if timeOutFunc != None:
+                # start receiving on a new thread and use timeOutFunc to handle time outs
+                thread.start_new(self.receiveWithTimeOutFunc, (func, timeOutFunc,))
+            else:
+                thread.start_new_thread(self.receive, (func,))  # start receiving on a new thread
         # Thread failed to start
         except thread.error, (value,message):
             print "[ERR]Thread Failure: " + message    #temp for errors will replace later
@@ -108,6 +112,26 @@ class UDP:
             # A timeout occurred just ignore and carry on
             except socket.timeout:
                 pass
+            # Received failed print the error and retry
+            except socket.error, (value,message):
+                print "[ERR]Socket Failure: " + message #temp for errors will replace later
+
+    # A function that continually listens for messages and calls a specified function on time outs
+    # NOTE: Use startReceive not receiveWithTimeOutFunc. ReceiveWithTimeOutFunc is a blocking function
+    # @param func[in] The handler function for handling received messages. The function that is passed should only
+    # take two argument, address of the sender and the message received
+    # @param timeOutFunc[in] A handler function that is called on a receive timeout. The function passed should
+    # take no or just optional arguments
+    def receiveWithTimeOutFunc(self, func, timeOutFunc):
+        #continue receiving until rx is set to false and a socket was created
+        while self.rx and self.sct:
+            try:
+                message, addr = self.sct.recvfrom(self.bufferSize)  # listen for messages
+                #call the handler function
+                func(addr, message)
+            # A timeout occurred just ignore and carry on
+            except socket.timeout:
+                timeOutFunc()
             # Received failed print the error and retry
             except socket.error, (value,message):
                 print "[ERR]Socket Failure: " + message #temp for errors will replace later
