@@ -22,7 +22,7 @@ lastCode = 0x00
 lastTimeStamp = 0
 
 #socket for serial communication
-s = UDP(5000)
+s = UDP(5000, 6, 0.1)
 
 #******************************************************************************
 # Functions for creating packets and retrieving data from packets
@@ -55,8 +55,8 @@ def createMoveMsg(code):
 
 #get the timestamp from a move msg
 def getMoveMsg(msg):
-	print ("msg: " + struct.unpack("!i", msg[1:5])[0])  #debugging
-	return struct.unpack("!i", msg[1:5])[0]
+	print ("msg: " + str(struct.unpack("!i", msg[1:5])[0]))  #debugging
+	return int(struct.unpack("!i", msg[1:5])[0])
 
 # verify the msg checksum
 def verifyMsg(msg):
@@ -125,17 +125,18 @@ def setMotor(motor, msg):
 	#get the direction to move the motor
 	dirc = (msg >> (2*motor)) & 3
 
-	print("dirc: " + dirc)
+	print("dirc: " + str(dirc))
 
 	#set the velocity
-	if(dirc == 0x01):
-		vel = neutralPoint+speedValue #forward
-	elif(dir == 0x02):
-		vel = neutralPoint-speedValue #backward
+	if(dirc == 1):
+		vel = neutralPoint+speed #forward
+	elif(dirc == 2):
+		print("Back")
+		vel = neutralPoint-speed #backward
 	else:
 		vel = neutralPoint #stop
 
-	print("vel: " + vel)
+	print("vel: " + str(vel))
 
 	#send the msg to the servo controller
 	ser.write(chr(0xff)+chr(motor)+chr(vel))
@@ -182,6 +183,12 @@ def intrp(addr, msg):
 			park()
 #			print("Stop")
 
+		elif (ord(msg[0]) == 0x08):
+			func_speedUp();
+
+		elif (ord(msg[0]) == 0x09):
+			func_speedUp();
+
 		elif(ord(msg[0]) == 0xEF):
 			#Resume
 			pass
@@ -203,7 +210,7 @@ def intrp(addr, msg):
 			#    s.send(0xF2,addr)
 
 if __name__ == '__main__':
-	s.startReceive(intrp)
+	s.startReceive(intrp, park)
 	while 1:
 		time.sleep(5)
 		pass
