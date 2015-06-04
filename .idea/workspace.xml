@@ -26,7 +26,7 @@
       <file leaf-file-name="RobotCtrlSvr.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/newVersion/RobotCtrlSvr.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="38" selection-start="862" selection-end="862" vertical-scroll-proportion="1.0555556" vertical-offset="0" max-vertical-offset="8840">
+            <state line="43" column="38" selection-start="862" selection-end="862" vertical-scroll-proportion="0.59969324" vertical-offset="255" max-vertical-offset="8840">
               <folding />
             </state>
           </provider>
@@ -35,8 +35,10 @@
       <file leaf-file-name="joystick_c.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/newVersion/joystick_c.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="271" column="22" selection-start="6911" selection-end="6911" vertical-scroll-proportion="0.0" vertical-offset="4607" max-vertical-offset="4709">
-              <folding />
+            <state line="271" column="22" selection-start="6911" selection-end="6911" vertical-scroll-proportion="0.0" vertical-offset="4006" max-vertical-offset="4709">
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -44,7 +46,7 @@
       <file leaf-file-name="UDP_SOCK.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Socket/UDP_SOCK.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="124" column="56" selection-start="6018" selection-end="6018" vertical-scroll-proportion="0.0" vertical-offset="2108" max-vertical-offset="2414">
+            <state line="124" column="56" selection-start="6018" selection-end="6018" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="2380">
               <folding />
             </state>
           </provider>
@@ -53,7 +55,7 @@
       <file leaf-file-name="UDP_SOCK.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/newVersion/UDP_SOCK.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="56" column="35" selection-start="2816" selection-end="2906" vertical-scroll-proportion="0.0" vertical-offset="952" max-vertical-offset="2414">
+            <state line="56" column="35" selection-start="2816" selection-end="2906" vertical-scroll-proportion="0.0" vertical-offset="691" max-vertical-offset="2380">
               <folding />
             </state>
           </provider>
@@ -80,7 +82,7 @@
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="height" value="784" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -163,7 +165,7 @@
     <property name="options.lastSelected" value="reference.idesettings.debugger.python" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../newControlSystem/BaseControlSystem" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="FullScreen" value="false" />
     <property name="recentsLimit" value="5" />
   </component>
@@ -348,14 +350,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21083455" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21083455" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -363,13 +365,13 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -391,34 +393,6 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/newVersion/RobotCtrlSvr.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="38" selection-start="862" selection-end="862" vertical-scroll-proportion="0.0" vertical-offset="731" max-vertical-offset="8840">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/newVersion/joystick_c.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="271" column="22" selection-start="6911" selection-end="6911" vertical-scroll-proportion="0.0" vertical-offset="4607" max-vertical-offset="4709">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Socket/UDP_SOCK.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="124" column="56" selection-start="6018" selection-end="6018" vertical-scroll-proportion="0.0" vertical-offset="2108" max-vertical-offset="2414">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/newVersion/UDP_SOCK.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="35" selection-start="2816" selection-end="2906" vertical-scroll-proportion="0.0" vertical-offset="952" max-vertical-offset="2414">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/newVersion/RobotCtrlSvr.py">
-      <provider selected="true" editor-type-id="text-editor">
         <state line="86" column="12" selection-start="1835" selection-end="1835" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="8925">
           <folding />
         </state>
@@ -427,7 +401,9 @@
     <entry file="file://$PROJECT_DIR$/newVersion/joystick_c.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="271" column="22" selection-start="6911" selection-end="6911" vertical-scroll-proportion="0.0" vertical-offset="4130" max-vertical-offset="4709">
-          <folding />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -441,7 +417,9 @@
     <entry file="file://$PROJECT_DIR$/newVersion/joystick_c.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="165" column="20" selection-start="3669" selection-end="3669" vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="4709">
-          <folding />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -462,7 +440,9 @@
     <entry file="file://$PROJECT_DIR$/newVersion/joystick_c.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <folding />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -481,7 +461,9 @@
     <entry file="file://$PROJECT_DIR$/newVersion/joystick_c.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <folding />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -500,7 +482,9 @@
     <entry file="file://$PROJECT_DIR$/newVersion/joystick_c.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <folding />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -519,7 +503,9 @@
     <entry file="file://$PROJECT_DIR$/newVersion/joystick_c.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <folding />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -533,7 +519,9 @@
     <entry file="file://$PROJECT_DIR$/newVersion/joystick_c.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <folding />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -547,7 +535,9 @@
     <entry file="file://$PROJECT_DIR$/newVersion/joystick_c.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <folding />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -561,7 +551,9 @@
     <entry file="file://$PROJECT_DIR$/newVersion/joystick_c.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <folding />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -575,7 +567,9 @@
     <entry file="file://$PROJECT_DIR$/newVersion/joystick_c.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <folding />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -589,7 +583,9 @@
     <entry file="file://$PROJECT_DIR$/newVersion/joystick_c.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <folding />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -603,7 +599,9 @@
     <entry file="file://$PROJECT_DIR$/newVersion/joystick_c.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <folding />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -639,13 +637,15 @@
     <entry file="file://$PROJECT_DIR$/newVersion/joystick_c.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="271" column="22" selection-start="6911" selection-end="6911" vertical-scroll-proportion="0.0" vertical-offset="4057" max-vertical-offset="4709">
-          <folding />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/newVersion/RobotCtrlSvr.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="38" selection-start="862" selection-end="862" vertical-scroll-proportion="1.0555556" vertical-offset="0" max-vertical-offset="8840">
+        <state line="43" column="38" selection-start="862" selection-end="862" vertical-scroll-proportion="0.59969324" vertical-offset="255" max-vertical-offset="8840">
           <folding />
         </state>
       </provider>
